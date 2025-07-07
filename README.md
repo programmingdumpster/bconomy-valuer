@@ -2,6 +2,10 @@
 
 This is a simple browser extension designed for the Bconomy online game. It helps you calculate the total base worth and market worth of items in your inventory, providing a quick overview of your assets and the difference between their base and market values.
 
+{preview}
+https://cdn.discordapp.com/attachments/1325192596800147606/1391765632764219483/2025-07-07_14-55-33.mov?ex=686d1640&is=686bc4c0&hm=1000eacffbaeb5316915ebeb04c7af8fe8558d4a963ab04369f87504c32167a4&
+
+
 ## Features
 
 * Calculates total base worth of all items in your inventory.
