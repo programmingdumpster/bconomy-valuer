@@ -1,0 +1,233 @@
+/* discord: @programmingdumpster */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideOutDown {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(50px); opacity: 0; }
+}
+
+#bconomy-calculator-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    display: none;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.bconomy-modal {
+    background: linear-gradient(145deg, #2c313a, #1f2329);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    color: #e0e6f1;
+    width: 450px;
+    max-width: 90%;
+    border: 1px solid #4a90e2;
+    position: relative;
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    animation: slideInUp 0.4s ease-out forwards;
+}
+
+#bconomy-calculator-modal-container.hide {
+    animation: fadeOut 0.3s ease-in forwards;
+}
+.bconomy-modal.hide {
+    animation: slideOutDown 0.4s ease-in forwards;
+}
+
+
+.modal-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #a0a8b4;
+    font-size: 28px;
+    cursor: pointer;
+    width: auto;
+    padding: 0 8px;
+    transition: color 0.2s ease;
+}
+.modal-close-button:hover {
+    color: #ff6b6b;
+    transform: rotate(90deg);
+}
+
+.modal-title {
+    margin-top: 0;
+    color: #4a90e2;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.results-title {
+    color: #4a90e2;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.modal-section {
+    margin-bottom: 20px;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #c0c6d4;
+    font-size: 15px;
+}
+
+.bconomy-modal input[type="text"],
+.bconomy-modal input[type="password"] {
+    width: calc(100% - 24px);
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #6c737f;
+    background-color: #3b4049;
+    color: #e0e6f1;
+    font-size: 15px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.bconomy-modal input[type="text"]:focus,
+.bconomy-modal input[type="password"]:focus {
+    border-color: #4a90e2;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+.modal-button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-button:active {
+    transform: translateY(1px);
+}
+
+.primary-button {
+    background-color: #4a90e2;
+    color: white;
+}
+.primary-button:hover {
+    background-color: #357ABD;
+}
+
+.success-button {
+    background-color: #5cb85c;
+    color: white;
+}
+.success-button:hover {
+    background-color: #4cae4c;
+}
+
+.modal-divider {
+    border: none;
+    border-top: 1px solid #3c424a;
+    margin: 25px 0;
+}
+
+.modal-results {
+    background-color: #2f343c;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #3c424a;
+}
+
+.result-item {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.result-label {
+    color: #c0c6d4;
+    font-weight: 500;
+}
+
+.modal-results strong {
+    color: #7ed321;
+    font-weight: 700;
+}
+
+.status-message {
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.status-message.success {
+    color: #28a745;
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+.status-message.error {
+    color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+.status-message.info {
+    color: #ffc107;
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+#bconomy-calculator-icon {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 10000;
+    background-color: rgba(40, 44, 52, 0.9);
+    border: 3px solid #4a90e2;
+    border-radius: 50%;
+    padding: 8px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+}
+#bconomy-calculator-icon:hover {
+    transform: scale(1.15) rotate(15deg);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+}

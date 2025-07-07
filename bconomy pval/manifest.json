@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+  "name": "Bconomy Inventory Calculator",
+  "version": "1.0",
+  "description": "Calculates player inventory value in Bconomy using their API.",
+  "permissions": [
+    "storage",                  
+    "activeTab",                
+    "https://bconomy.net/*",    
+    "https://static.cloudflareinsights.com/*" 
+  ],
+  "browser_action": {           
+    "default_title": "Open Bconomy Calculator" 
+  },
+  "background": {               
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [         
+    {
+      "matches": ["https://bconomy.net/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle" 
+    }
+  ],
+  "web_accessible_resources": [ 
+    "modal.html",   
+    "modal.css",    
+    "icons/*.png" 
+  ],
+  "icons": {                    
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{aa150035-927f-4d74-a22c-3e44fe48d960}" 
+    }
+  }
+}

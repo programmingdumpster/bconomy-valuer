@@ -1,0 +1,30 @@
+<div id="bconomy-calculator-modal" class="bconomy-modal">
+    <button id="bconomy-modal-close-button" class="modal-close-button">&times;</button>
+    <h2 class="modal-title">Bconomy Inventory Calculator</h2>
+
+    <div class="modal-section">
+        <label for="api-key-input" class="input-label">API Key:</label>
+        <input type="password" id="api-key-input" placeholder="Enter your Bconomy API Key">
+        <button id="save-api-key-button" class="modal-button primary-button">Save API Key</button>
+        <p id="api-key-status" class="status-message"></p>
+    </div>
+
+    <hr class="modal-divider">
+
+    <div class="modal-section">
+        <label for="player-id-input" class="input-label">Player ID (BcID#):</label>
+        <input type="text" id="player-id-input" placeholder="Enter Player BcID#">
+        <button id="confirm-player-id-button" class="modal-button success-button">Confirm ID and Calculate</button>
+        <p id="player-id-input-status" class="status-message"></p>
+    </div>
+
+    <hr class="modal-divider">
+
+    <div class="modal-results">
+        <h3 class="results-title">Calculation Results:</h3>
+        <p class="result-item"><span class="result-label">Player Name:</span> <span id="player-name-display">N/A</span></p>
+        <p class="result-item"><span class="result-label">Total Market Worth:</span> <strong id="market-worth-display">Loading...</strong> BC</p>
+        <p class="result-item"><span class="result-label">Total Base Worth:</span> <strong id="base-worth-display">Loading...</strong> BC</p>
+        <p id="modal-status-message" class="status-message"></p>
+    </div>
+</div>
